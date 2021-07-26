@@ -1,0 +1,22 @@
+{
+	"step": {
+		"prefix": ["step", "სტეპ", "ნაბიჯი"],
+		"body": [
+			"@allure.title(\"${1:Please, edit and give descriptive title for test step}\")",
+			"@allure.description(\"${2:Please, edit and give detailed description for test step}\")",
+			"def test_${3:step_name}(self):",
+			"",
+		],
+		"description": "Full step generation with Allure Report 'title', 'description' and Test function with screenshot and screen recoriding attachments / მთლიანი ნაბიჯის გენერაცია სათურითა და აღწერით Allure Report-ისთვის და ტესტის ნაბიჯის ფუნქციით ეკრანის ანაბეჭდისა და ნაბიჯის ვიდეო ჩანაწერით"
+	},
+	"locator": {
+		"prefix": ["loc", "ლოკ"],
+		"body": [
+			"def ${1:locator_name}(self):",
+			"\t${1:locator_name} = BP.find_element(self, ${2:source})",
+			"\treturn ${1:locator_name}",
+
+		],
+		"description": "Full step generation with Allure Report 'title', 'description' and Test function with screenshot and screen recoriding attachments / მთლიანი ნაბიჯის გენერაცია სათურითა და აღწერით Allure Report-ისთვის და ტესტის ნაბიჯის ფუნქციით ეკრანის ანაბეჭდისა და ნაბიჯის ვიდეო ჩანაწერით"
+	}
+}

@@ -12,16 +12,20 @@ class BasePage(Driver):
         self.driver = driver
 
     def find_element(self, locator, time_out=10):
-        logging.info("I'm here!")
-        wait = WebDriverWait(self.driver, time_out)
-        element = wait.until(
-            EC.visibility_of_element_located((locator))
-        )
-        return element
-        # try:
+        try:
+            wait = WebDriverWait(self.driver, time_out)
+            element = wait.until(
+                EC.visibility_of_element_located((locator))
+            )
+            return element
         #     element = wait.until(
         #         EC.visibility_of_element_located((locator))
         #     )
         #     return element
-        # except Exception:
-        #     raise Exception("Element by {how} with the value {what} cannot be found.")
+        except Exception:
+            raise Exception("Element by \"{0}\" with the value \"{1}\" cannot be found.".format(locator[0], locator[1]))
+
+
+    def find_children(self, parent):
+        children = parent.find_elements_by_xpath(".//*")
+        return children
