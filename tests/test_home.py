@@ -25,10 +25,11 @@ GOTP = GetOtp()
 PFP = PasswordFormPage()
 SP = SuccessPage()
 
-E_MAIL = "jondokatsia"+ str(RD.randint(0, 100)) 
+E_MAIL = "jondoekatsia"+ str(RD.randint(0, 100)) 
 EMAIL = "22vzm."+E_MAIL+"@inbox.testmail.app"
 @allure.feature("Extra.ge Registration test")
 @allure.story("Happy path testing")
+@allure.link("./test_data/test_cases.md", "User registration")
 class TestHome:
     @allure.title("Go to https://extra.ge")
     @allure.description("Check if home page is loaded. Check header elements.")
@@ -288,5 +289,5 @@ class TestHome:
         with assume: assert close.is_displayed == True
         with assume: assert header.text == "გილოცავ!"
         with assume: assert text.text == "შენ წარმატებით გაიარე რეგისტრაცია"
-        with assume: assert button.is_displayed == True
+        with assume: assert button.is_displayed() == True
         with assume: assert button.text == "შესვლა"
